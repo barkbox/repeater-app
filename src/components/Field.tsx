@@ -45,7 +45,7 @@ function createItem(): Item {
  */
 const Field = (props: FieldProps) => {
   const {
-    thirdFieldName = "Third Field Name",
+    thirdFieldName = "",
     thirdFieldOptions = "",
     valueName = "Value",
     itemName = "Item Name",
@@ -196,7 +196,7 @@ const Field = (props: FieldProps) => {
                   onChange={createOnChangeHandler(item, "value")}
                 />
               </TableCell>
-              <TableCell>{renderThirdFieldTableCell(item)}</TableCell>
+              {!!thirdFieldName && <TableCell>{renderThirdFieldTableCell(item)}</TableCell>}
               <TableCell align="right">
                 <EditorToolbarButton
                   label="delete"
